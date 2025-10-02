@@ -1,0 +1,14 @@
+graph TD
+    A[Dados Brutos de Pesquisa] --> B(Limpeza e Pre-processamento)
+    B --> C{Analise Estatistica em R}
+    C --> D[Visualizacao de Dados]
+    D --> E[Relatorios e Dashboards]
+    C --> F[Modelagem Preditiva Opcional]
+    F --> E
+    subgraph Plataforma R
+        B
+        C
+        D
+        F
+    end
+
