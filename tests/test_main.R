@@ -24,7 +24,7 @@ test_that("main function runs without errors and produces expected output", {
   expect_true(any(grepl("✅ Survey data analysis complete!", output_content)))
   
   # Check if the plot file was created
-  plot_path <- "R-Survey-Analytics/assets/satisfaction_distribution.png"
+  plot_path <- "../assets/satisfaction_distribution.png"
   expect_true(file.exists(plot_path))
   
   # Clean up the generated plot file after test

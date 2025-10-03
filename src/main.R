@@ -55,8 +55,14 @@ main <- function() {
         theme_minimal() +
         scale_fill_brewer(palette = "YlGnBu")
     
+    # Ensure the assets directory exists
+    if (!dir.exists("assets")) {
+        dir.create("assets")
+    }
+    
     # Save the plot to a file
-    ggsave("R-Survey-Analytics/assets/satisfaction_distribution.png", plot = satisfaction_plot, width = 8, height = 6, dpi = 300)
+    ggsave(file.path(getwd(), "assets", "satisfaction_distribution.png"), plot = satisfaction_plot, width = 8, height = 6, dpi = 300)
+
     cat("✅ Satisfaction distribution plot saved to assets/satisfaction_distribution.png\n")
     
     cat("\n✅ Survey data analysis complete!\n")
